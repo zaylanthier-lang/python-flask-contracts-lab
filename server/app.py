@@ -17,9 +17,9 @@ app = Flask(__name__)
 def contract_by_id(id):
     for contract in contracts:
         if contract["id"] == id:
-            return make_response(contract, 200)
+            return make_response(contract["contract_information"], 200)
 
-    return make_response({"error": "Contract not found"}, 404)
+    return make_response("Contract not found", 404)
 
 
 @app.route('/customer/<customer_name>')
